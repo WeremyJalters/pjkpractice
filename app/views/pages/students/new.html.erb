@@ -1,7 +1,7 @@
 this is where new students will be created
 
-<%= form_for @student do |s| %>
-  <%= s.label :First_name %>
-  <%= s.text_field :first_name %>
-  <%= s.submit %>
+<%= simple_form_for @student do |s| %>
+  <%= s.input :first_name, label: 'First name' %>
+  <%= s.input :last_name, label: 'Last name' %>
+  <%= s.button :submit %>
  <% end %>

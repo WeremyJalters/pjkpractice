@@ -1,8 +1,9 @@
 class StudentsController < ApplicationController
-  
+  before_action :require_login
+
   def new
     @student = Student.new
-    render 'pages/students/new'
+    render :new
   end
 
   def create
@@ -10,6 +11,8 @@ class StudentsController < ApplicationController
 
     if @student.save
       redirect_to @student, notice: "Student created."
+    else
+      render :new, notice: "student was not created" #this isn't working, not rendering
     end
   end
 
@@ -19,6 +22,6 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:first_name, :last_name)
+    params.require(:student).permit(:first_name, :last_name, :group_name )
   end
 end

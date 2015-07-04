@@ -22,6 +22,6 @@ feature "user creates student" do
     fill_in "Last name", with: "Smith"
     click_button "Create Student"
 
-    expect(page).to have_content ("can't be blank")
+    expect(page).to have_content ("Student wasn't saved. Try again.")
   end
 end

@@ -8,11 +8,10 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-
     if @student.save
       redirect_to @student, notice: "Student created."
     else
-      render :new, notice: "student was not created" #this isn't working, not rendering
+      redirect_to new_student_path, notice: "Student wasn't saved. Try again."
     end
   end
 

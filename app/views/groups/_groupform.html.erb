@@ -1,0 +1,7 @@
+<%= simple_form_for @group do |g| %>
+  <%= g.input :teacher_name, label: 'Teacher name' %>
+  <%= g.input :group_time, label: 'Group time' %>
+  <%= g.input :group_name, label: 'Group name' %>
+  <%= g.input :group_description, label: 'Group description' %>
+<%= g.button :submit %>
+<% end %>

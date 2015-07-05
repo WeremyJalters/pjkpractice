@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user modifies group" do
+feature "user updates group" do
   scenario " by changing teacher"do
     sign_in
    group = FactoryGirl.create(:group)

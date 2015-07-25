@@ -1,0 +1,10 @@
+<% render 'students/studentform' %>
+
+ Here, you can edit the student's name, or select a different Group Name from the dropdown menu!
+<%= simple_form_for @student do |s| %>
+  <%= s.input :first_name, label: 'First name' %>
+  <%= s.input :last_name, label: 'Last name' %>
+  <%= s.label :group_name %>
+  <%= s.collection_select :group_name, Group.all, :group_name, :group_name %>
+  <%= s.button :submit %>
+ <% end %>

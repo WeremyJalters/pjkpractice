@@ -1,6 +1,6 @@
 <%= simple_form_for @student do |s| %>
   <%= s.input :first_name, label: 'First name' %>
   <%= s.input :last_name, label: 'Last name' %>
-  <%= s.collection_select :group_name, Group.all, :group_name, :group_name %>
+  <%= s.collection_select :group_name, Group.all, :group_name, :group_name, label: 'Group Name' %>
   <%= s.button :submit %>
  <% end %>
